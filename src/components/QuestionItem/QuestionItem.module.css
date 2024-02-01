@@ -1,0 +1,17 @@
+.collapseBox {
+  background-color: #554d98 !important;
+}
+.question {
+  font-size: 22px;
+  background-color: #554d98 !important;
+  color: white;
+}
+
+.collapse-content {
+  background-color: #554d98 !important;
+}
+
+.answer {
+  font-size: 17px;
+  background-color: #554d98 !important;
+}

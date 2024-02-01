@@ -1,0 +1,14 @@
+.heading {
+    color: var(--main-color);
+    font-size: 43px;
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0 10px ;
+}
+
+.brdr {
+    width: 260px;
+    height: 5px;
+    background-color: rgba(85, 77, 152,0.5);
+    margin:0 auto 70px;
+}
