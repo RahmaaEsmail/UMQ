@@ -7,7 +7,7 @@ export default function Footer() {
     <footer
       className={`${styles.footer} w-full bg-neutral-300 py-7 px-7 gap-8 lg:gap-4`}
     >
-      <div className="logo mt-8 lg:w-50 lg:h-48 ml-3 w-full flex justify-center">
+      <div className="logo mt-8 lg:w-40 lg:h-44 ml-3 w-full flex justify-center">
         <img src={logoImg} alt="UMQ LOGO" className="w-48" />
       </div>
 
@@ -18,10 +18,7 @@ export default function Footer() {
         <p className="leading-8 text-base mx-auto ">
           {" "}
           We are a specialized cleaning company dedicated to providing
-          high-quality and reliable cleaning services. Our team consists of
-          skilled professionals who undergo rigorous training and are equipped
-          with the latest technologies and tools to ensure the efficient and
-          effective delivery of our services.
+          high-quality and reliable cleaning services.
         </p>
       </div>
 
