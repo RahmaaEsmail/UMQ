@@ -1,10 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaBars, FaXmark } from "react-icons/fa6";
 
 import logoImg from "/images/UMQ LOGO.png";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleOpenMenu() {
+    setIsOpen((prev) => !prev);
+  }
+
   return (
     <nav className="flex justify-between fixed left-0 right-0  py-2 px-5 shadow-xl  bg-white">
       <div className="flex gap-20 align-middle">
@@ -14,7 +21,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <ul className="links flex justify-between gap-8 align-middle">
+        <ul className="links lg:flex justify-between gap-8 align-middle hidden">
           <li className="m-auto">
             <Link className="flex justify-center h-auto align-middle main_color">
               Product
@@ -49,7 +56,7 @@ export default function Navbar() {
         </ul>
       </div>
 
-      <div className="flex gap-7 align-middle">
+      <div className="lg:flex hidden gap-7 align-middle">
         <div className="flex flex-col justify-center">
           <label
             className={`${styles.label} flex cursor-pointer gap-2 p-2 px-7 rounded-full`}
@@ -84,6 +91,46 @@ export default function Navbar() {
           </svg>
         </div>
       </div>
+
+      <div className={`${styles.menuIcon} lg:hidden`} onClick={handleOpenMenu}>
+        {isOpen ? <FaXmark /> : <FaBars />}
+      </div>
+
+      {isOpen && (
+        <ul className={`${styles.openMenu}  shadow-xl  bg-white`}>
+          <li>
+            <Link className="flex justify-center h-auto align-middle main_color">
+              Product
+            </Link>
+          </li>
+
+          <li>
+            <Link className="flex justify-center h-auto align-middle main_color">
+              Feature
+            </Link>
+          </li>
+
+          <li>
+            <Link className="flex justify-center h-auto align-middle main_color">
+              Pricing
+            </Link>
+          </li>
+
+          <li>
+            <Link className="flex justify-center h-auto align-middle main_color">
+              About
+            </Link>
+          </li>
+
+          <li>
+            <button
+              className={`${styles.btn} flex justify-center h-auto align-middle btn btn-sm rounded-full btn-success main_button py-1 p-3`}
+            >
+              Success
+            </button>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 }

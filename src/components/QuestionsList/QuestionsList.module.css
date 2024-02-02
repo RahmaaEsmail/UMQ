@@ -1,11 +1,26 @@
 .section {
-  background-color: rgb(241, 241, 241);
+  background-color: #dbcbe8;
 }
 
 .questionsContainer {
-  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 13px;
+}
+
+@media (max-width: 600px) {
+  .questionsContainer {
+    width: 100%;
+  }
+
+  .section {
+    padding: 5rem 2rem !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .section {
+    padding: 5rem 1rem !important;
+  }
 }

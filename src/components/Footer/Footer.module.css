@@ -1,49 +1,78 @@
 .footer {
-    background-color: #898b8d;
-    /* background-color: #666666; */
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap:30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.footer p {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .heading {
-    font-size: 20px;
-    color: var(--main-color);
+  font-size: 20px;
+  color: var(--main-color);
 }
 .payment {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  justify-content: center;
+  margin: 0 auto;
+  row-gap: 10px;
+  column-gap: 20px;
 }
 
 .payment img {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
+  width: 4rem;
+  height: 1.5rem;
 }
 
-.iconsList li{
-    padding: 8px;
+.iconsList li {
+  padding: 8px;
 }
 
 .iconsList a {
-    width: 30px;
-    height: 30px;
-    display: block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    color: white;
+  width: 30px;
+  height: 30px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white;
 }
 
 .iconsList a:hover {
-    color: var(--main-color);
+  color: var(--main-color);
 }
 
-.footer p , 
-.footer h3 ,
+.footer p,
+.footer h3,
 .footer a {
-    color: var(--main-color);
+  color: var(--main-color);
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+.img {
+  width: auto;
+}
+
+.img img {
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
 }

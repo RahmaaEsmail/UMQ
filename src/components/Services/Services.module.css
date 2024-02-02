@@ -1,3 +1,19 @@
 .services {
-  background-color: rgb(241, 241, 241);
+  background-color: #dbcbe8;
+}
+
+@media (max-width: 1015px) {
+  .cardText {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 520px) {
+  .cardText {
+    max-width: 100%;
+  }
+
+  .services {
+    padding: 5rem 2rem !important;
+  }
 }

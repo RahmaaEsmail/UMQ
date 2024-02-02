@@ -6,9 +6,10 @@ export default function Services() {
   return (
     <section className={`${styles.services} p-20`}>
       <Heading heading="UMQ" />
-      <div className="grid grid-cols-3 gap-20">
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
         <div className="flex flex-col justify-between gap-24">
-          <div className="text-center">
+          <div className={`${styles.cardText} text-center  m-auto`}>
             <h4 className="text-3xl text-[#554d98] font-bold pb-8 tracking-wide	">
               Wait From Anywhere
             </h4>
@@ -20,7 +21,7 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="text-center">
+          <div className={`${styles.cardText} text-center  m-auto`}>
             <h4 className="text-3xl text-[#554d98] font-bold pb-8">
               Dashboard
             </h4>
@@ -32,12 +33,12 @@ export default function Services() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="my-auto">
           <Carousel />
         </div>
 
         <div className="flex flex-col justify-between gap-24">
-          <div className="text-center">
+          <div className={`${styles.cardText} text-center  m-auto`}>
             <h4 className="text-3xl text-[#554d98] font-bold pb-8 tracking-wide leading-normal">
               Reserve And Manage Future Appointments
             </h4>
@@ -49,7 +50,7 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="text-center">
+          <div className={`${styles.cardText} text-center  m-auto`}>
             <h4 className="text-3xl text-[#554d98] font-bold pb-8">
               Real-Time Notification
             </h4>

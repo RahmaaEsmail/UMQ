@@ -12,7 +12,6 @@
 .slide {
   display: inline-block;
   height: 600px;
-  width: 100%;
   border-radius: 40px;
 }
 
@@ -29,7 +28,7 @@
   cursor: pointer;
   margin: 15px 7px 0px;
 
-  background-color: #c4c4c4;
+  background-color: white;
 }
 
 .slideshowDot.active {

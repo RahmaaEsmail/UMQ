@@ -1,45 +1,86 @@
 import logoImg from "/images/UMQ LOGO.png";
-import styles from './Footer.module.css';
-import { FaInstagram , FaTiktok , FaSnapchat , FaTwitter } from "react-icons/fa";
+import styles from "./Footer.module.css";
+import { FaInstagram, FaTiktok, FaSnapchat, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className={`${styles.footer} bg-neutral-300   py-7 px-7 gap-4`}>
-        <div className="logo mt-8 w-60 ml-3">
-           <img src={logoImg} alt="UMQ LOGO" className="w-100" />
+    <footer
+      className={`${styles.footer} w-full bg-neutral-300 py-7 px-7 gap-8 lg:gap-4`}
+    >
+      <div className="logo mt-8 lg:w-50 lg:h-48 ml-3 w-full flex justify-center">
+        <img src={logoImg} alt="UMQ LOGO" className="w-48" />
+      </div>
+
+      <div className="flex flex-col gap-7 mt-8">
+        <h3 className={`${styles.heading} text-center text-1xl font-bold`}>
+          About Us
+        </h3>
+        <p className="leading-8 text-base mx-auto ">
+          {" "}
+          We are a specialized cleaning company dedicated to providing
+          high-quality and reliable cleaning services. Our team consists of
+          skilled professionals who undergo rigorous training and are equipped
+          with the latest technologies and tools to ensure the efficient and
+          effective delivery of our services.
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-7 mt-8">
+        <h3 className={`${styles.heading} text-1xl font-bold text-center`}>
+          Follow us
+        </h3>
+        <ul
+          className={`${styles.iconsList} flex justify-center gap-8 align-middle`}
+        >
+          <li>
+            <a
+              href="https://www.instagram.com/ummq.sa?igsh=Z2xkZnZ0dXVqanp1"
+              target="_blank"
+            >
+              <FaInstagram />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.tiktok.com/@ummq.sa?_t=8jWrYiYNRNi&_r=1"
+              target="_blank"
+            >
+              <FaTiktok />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.snapchat.com/add/ummqsa?share_id=41WLn9gps2w&locale=ar-AE"
+              target="_blank"
+            >
+              <FaSnapchat />
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/ummq_sa?s=08" target="_blank">
+              <FaTwitter />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="flex flex-col gap-7 mt-8">
+        <h3 className={`${styles.heading} text-center text-1xl font-bold`}>
+          WORKING WITH THE BEST
+        </h3>
+        <div className={`${styles.payment} `}>
+          <img src="/images/mada.svg" alt="Mada" />
+          <img src="/images/mastercard.svg" alt="Master Card" />
+          <img src="/images/visa.svg" alt="Visa" />
+          <img src="/images/stc_pay.svg" alt="Mada" />
+          <img src="/images/amex.svg" alt="Mada" />
+          <img src="/images/apple_pay.svg" alt="Mada" />
         </div>
+      </div>
 
-        <div className="flex flex-col gap-7 mt-8">
-            <h3 className={`${styles.heading} text-1xl font-bold`}>About Us</h3>
-            <p className="leading-8 text-base"> UMQ Provides excellent service and good customer service , If you
-              would like us to contact With you, write your number and Our team
-              won't fall short</p>
-        </div>
-
-        <div className="flex flex-col gap-7 mt-8">
-            <h3 className={`${styles.heading} text-1xl font-bold text-center`}>Follow us</h3>
-            <ul className={`${styles.iconsList} flex justify-center gap-8 align-middle`}>
-                <li><a href="https://www.instagram.com/taketkt/" target="_blank"><FaInstagram /></a></li>
-                <li><a href="https://www.tiktok.com/@taketkt" target="_blank"><FaTiktok /></a></li>
-                <li><a href="https://www.snapchat.com/add/taketkt" target="_blank"><FaSnapchat /></a></li>
-                <li><a href="https://twitter.com/taketkt" target="_blank"><FaTwitter /></a></li>
-            </ul>
-            </div>
-            <div className="flex flex-col gap-7 mt-8 ml-9">
-                <h3 className={`${styles.heading} text-1xl font-bold`}>WORKING WITH THE BEST</h3>
-                <div className={`${styles.payment}`}>
-                    <img src="/images/mada.svg" alt="Mada" />
-                    <img src="/images/mastercard.svg" alt="Master Card" />
-                    <img src="/images/visa.svg" alt="Visa" />
-                    <img src="/images/stc_pay.svg" alt="Mada" />
-                    <img src="/images/amex.svg" alt="Mada" />
-                    <img src="/images/apple_pay.svg" alt="Mada" />
-                </div>
-            </div>
-
-            <div className="mt-8">
-                <img src="/images/SBC-logo.svg" alt="" />
-            </div>
+      <div className={`${styles.img} mt-8 mx-auto`}>
+        <img src="/images/SBC-logo.svg" alt="logo image" className="w-100" />
+      </div>
     </footer>
-  )
+  );
 }

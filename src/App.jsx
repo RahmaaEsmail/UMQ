@@ -6,7 +6,7 @@ import Services from "./components/Services/Services";
 
 export default function App() {
   return (
-    <main className="bg-neutral-50">
+    <main className="bg-neutral-50 w-full">
       <Home />
       <Services />
       <Pricing />

@@ -12,3 +12,9 @@
     background-color: rgba(85, 77, 152,0.5);
     margin:0 auto 70px;
 }
+
+@media (max-width:460px) {
+    .heading {
+        font-size: 30px;
+    }
+}

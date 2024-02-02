@@ -44,3 +44,31 @@
   color: white;
   margin-right: 50px;
 }
+
+.menuIcon {
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  margin: auto;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+
+.openMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: red;
+  left: 0;
+  right: 0;
+  top: 100px;
+  padding: 1.6rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 30px;
+}
