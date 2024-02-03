@@ -1,6 +1,7 @@
 import logoImg from "/images/UMQ LOGO.png";
 import styles from "./Footer.module.css";
 import { FaInstagram, FaTiktok, FaSnapchat, FaTwitter } from "react-icons/fa";
+import { t } from "i18next";
 
 export default function Footer() {
   return (
@@ -13,18 +14,17 @@ export default function Footer() {
 
       <div className="flex flex-col gap-7 mt-8">
         <h3 className={`${styles.heading} text-center text-1xl font-bold`}>
-          About Us
+          {t('about-us-heading')}
         </h3>
         <p className="leading-8 text-base mx-auto ">
           {" "}
-          We are a specialized cleaning company dedicated to providing
-          high-quality and reliable cleaning services.
+          {t("about-us-paragraph")}
         </p>
       </div>
 
       <div className="flex flex-col gap-7 mt-8">
         <h3 className={`${styles.heading} text-1xl font-bold text-center`}>
-          Follow us
+          {t("follow-us")}
         </h3>
         <ul
           className={`${styles.iconsList} flex justify-center gap-8 align-middle`}
@@ -63,7 +63,7 @@ export default function Footer() {
 
       <div className="flex flex-col gap-7 mt-8">
         <h3 className={`${styles.heading} text-center text-1xl font-bold`}>
-          WORKING WITH THE BEST
+          {t("working-with-the-best")}
         </h3>
         <div className={`${styles.payment} `}>
           <img src="/images/mada.svg" alt="Mada" />

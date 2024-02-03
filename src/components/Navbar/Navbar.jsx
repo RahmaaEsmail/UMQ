@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaXmark } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 import logoImg from "/images/UMQ LOGO.png";
 import styles from "./Navbar.module.css";
+import NavLink from "../NavLink/NavLink";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const {t, i18n } = useTranslation();
 
   function handleOpenMenu() {
     setIsOpen((prev) => !prev);
+  }
+
+  function handleLanguage(e) {
+    e.target.checked ? i18n.changeLanguage("ar") : i18n.changeLanguage("en");
+    document.body.dir = i18n.dir();
   }
 
   return (
@@ -22,30 +30,11 @@ export default function Navbar() {
         </div>
 
         <ul className="links lg:flex justify-between gap-8 align-middle hidden">
-          <li className="m-auto">
-            <Link className="flex justify-center h-auto align-middle main_color">
-              Product
-            </Link>
-          </li>
-
-          <li className="m-auto">
-            <Link className="flex justify-center h-auto align-middle main_color">
-              Feature
-            </Link>
-          </li>
-
-          <li className="m-auto">
-            <Link className="flex justify-center h-auto align-middle main_color">
-              Pricing
-            </Link>
-          </li>
-
-          <li className="m-auto">
-            <Link className="flex justify-center h-auto align-middle main_color">
-              About
-            </Link>
-          </li>
-
+          <NavLink>{t('feature-link')}</NavLink>
+          <NavLink>{t("pricing-link")}</NavLink>
+          <NavLink>{t("about-link")}</NavLink>
+          <NavLink>{t("question-link")}</NavLink>
+          <NavLink>{t('feature-link')}</NavLink>
           <li className="m-auto ">
             <button
               className={`${styles.btn} flex justify-center h-auto align-middle btn btn-sm rounded-full btn-success main_button py-1 p-3`}
@@ -58,70 +47,34 @@ export default function Navbar() {
 
       <div className="lg:flex hidden gap-7 align-middle">
         <div className="flex flex-col justify-center">
-          <label
-            className={`${styles.label} flex cursor-pointer gap-2 p-2 px-7 rounded-full`}
-          >
-            <span className={`${styles.on}`}>ع</span>
-            <input
-              type="checkbox"
-              value="synthwave"
-              className={`${styles.checkToggle} p-3 toggle theme-controller`}
-            />
-            <span className={`${styles.off}`}>EN</span>
+          <label className="cursor-pointer grid place-items-center">
+            <div className={styles.switch}>
+              <input
+                id="language-toggle"
+                onChange={handleLanguage}
+                className={`${styles["check-toggle"]} ${styles["check-toggle-round-flat"]}`}
+                type="checkbox"
+              />
+              <label htmlFor="language-toggle"></label>
+              <span className={styles.on}>EN</span>
+              <span className={styles.off}>AR</span>
+            </div>
           </label>
-        </div>
-
-        <div className="flex flex-col justify-center">
-          {/* sun icon */}
-          {/* <svg
-              className="main_color swap-on fill-current w-8 h-10"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-            </svg> */}
-
-          {/* moon icon */}
-          <svg
-            className="moon-icon swap-off fill-current w-8 h-10"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-          </svg>
         </div>
       </div>
 
-      <div className={`${styles.menuIcon} lg:hidden`} onClick={handleOpenMenu}>
+      <div className={`${styles.menuIcon}  ${(i18n.language==='ar' ) || (i18n.language==='ar' && isOpen) ? 'w-auto right-80' : 'right-8'} lg:hidden`} onClick={handleOpenMenu}>
         {isOpen ? <FaXmark /> : <FaBars />}
       </div>
 
       {isOpen && (
-        <ul className={`${styles.openMenu}  shadow-xl  bg-white`}>
-          <li>
-            <Link className="flex justify-center h-auto align-middle main_color">
-              Product
-            </Link>
-          </li>
-
-          <li>
-            <Link className="flex justify-center h-auto align-middle main_color">
-              Feature
-            </Link>
-          </li>
-
-          <li>
-            <Link className="flex justify-center h-auto align-middle main_color">
-              Pricing
-            </Link>
-          </li>
-
-          <li>
-            <Link className="flex justify-center h-auto align-middle main_color">
-              About
-            </Link>
-          </li>
-
+        <div className={`flex flex-col ${styles.openMenu} shadow-xl  bg-white `}>
+        <ul className="flex flex-col gap-5">
+          <NavLink>{t('feature-link')}</NavLink>
+          <NavLink>{t("pricing-link")}</NavLink>
+          <NavLink>{t("about-link")}</NavLink>
+          <NavLink>{t("question-link")}</NavLink>
+          <NavLink>{t('feature-link')}</NavLink>
           <li>
             <button
               className={`${styles.btn} flex justify-center h-auto align-middle btn btn-sm rounded-full btn-success main_button py-1 p-3`}
@@ -130,6 +83,24 @@ export default function Navbar() {
             </button>
           </li>
         </ul>
+
+
+      <div className="flex flex-col  justify-center">
+        <label className="cursor-pointer grid place-items-center">
+          <div className={styles.switch}>
+            <input
+              id="language-toggle"
+              onChange={handleLanguage}
+              className={`${styles["check-toggle"]} ${styles["check-toggle-round-flat"]}`}
+              type="checkbox"
+            />
+            <label htmlFor="language-toggle"></label>
+            <span className={styles.on}>EN</span>
+            <span className={styles.off}>AR</span>
+          </div>
+        </label>
+      </div>
+    </div>
       )}
     </nav>
   );

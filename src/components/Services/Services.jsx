@@ -1,35 +1,32 @@
+import { useTranslation } from "react-i18next";
 import Carousel from "../Carousel/Carousel";
 import Heading from "../Heading/Heading";
 import styles from "./Services.module.css";
 
 export default function Services() {
+  const {t} = useTranslation();
+
   return (
     <section className={`${styles.services} p-20`}>
-      <Heading heading="UMQ" />
+      <Heading heading={t('feature-title')} />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
         <div className="flex flex-col justify-between gap-24">
           <div className={`${styles.cardText} text-center  m-auto`}>
             <h4 className="text-3xl text-[#554d98] font-bold pb-8 tracking-wide	">
-              Wait From Anywhere
+              {t('feature-heading1')}
             </h4>
             <p className="text-[#4d4589] leading-6 text-lg">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius eos
-              vitae repellendus in amet. Ullam obcaecati perspiciatis hic harum
-              qui iure optio, necessitatibus vitae! Impedit dolores nobis
-              laborum consequuntur optio?
+              {t('feature-paragraph1')}
             </p>
           </div>
 
           <div className={`${styles.cardText} text-center  m-auto`}>
             <h4 className="text-3xl text-[#554d98] font-bold pb-8">
-              Dashboard
+            {t('feature-heading3')}
             </h4>
             <p className="text-[#4d4589] leading-6 text-lg">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
-              sunt omnis ratione nulla vitae voluptatibus atque soluta veritatis
-              labore quod ipsam dolorem itaque accusamus natus fugiat, at
-              mollitia quo vero!
+            {t('feature-paragraph3')}
             </p>
           </div>
         </div>
@@ -40,25 +37,19 @@ export default function Services() {
         <div className="flex flex-col justify-between gap-24">
           <div className={`${styles.cardText} text-center  m-auto`}>
             <h4 className="text-3xl text-[#554d98] font-bold pb-8 tracking-wide leading-normal">
-              Reserve And Manage Future Appointments
+            {t('feature-heading2')}
             </h4>
             <p className="text-[#4d4589] leading-6 text-lg">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius eos
-              vitae repellendus in amet. Ullam obcaecati perspiciatis hic harum
-              qui iure optio, necessitatibus vitae! Impedit dolores nobis
-              laborum consequuntur optio?
+            {t('feature-paragraph2')}
             </p>
           </div>
 
           <div className={`${styles.cardText} text-center  m-auto`}>
             <h4 className="text-3xl text-[#554d98] font-bold pb-8">
-              Real-Time Notification
+            {t('feature-heading4')}
             </h4>
             <p className="text-[#4d4589] leading-6 text-lg">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
-              sunt omnis ratione nulla vitae voluptatibus atque soluta veritatis
-              labore quod ipsam dolorem itaque accusamus natus fugiat, at
-              mollitia quo vero!
+            {t('feature-paragraph4')}
             </p>
           </div>
         </div>

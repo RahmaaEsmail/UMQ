@@ -1,6 +1,10 @@
+import { useTranslation } from "react-i18next";
 import styles from "./QuestionItem.module.css";
 
-export default function QuestionItem({ question }) {
+export default function QuestionItem({ question , answer }) {
+  if(answer) {
+    answer = answer.split('.');
+  }
   return (
     <div className={`${styles.collapseBox} collapse collapse-arrow`}>
       <input type="radio" name="my-accordion-2" />
@@ -11,10 +15,9 @@ export default function QuestionItem({ question }) {
       </div>
       <div className={`${styles["collapse-content"]} collapse-content`}>
         <p className={`${styles.answer} text-white text-sm lg:text-lg`}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          excepturi a nostrum, quae cum maiores voluptatum sequi quam iusto
-          molestias saepe alias aut nisi officia esse temporibus ratione,
-          suscipit voluptate.
+          {answer ? (
+            answer.map((ans , index) => <p key={ans}>{index+1}- {ans}</p>)
+          ) :'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem sunt omnis ratione nulla vitae voluptatibus atque soluta veritatis labore quod ipsam dolorem itaque accusamus natus fugiat, at mollitia quo vero!'}
         </p>
       </div>
     </div>

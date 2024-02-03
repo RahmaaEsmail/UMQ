@@ -1,43 +1,46 @@
+import { t } from "i18next";
 import Heading from "../Heading/Heading";
 import styles from "./Pricing.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function Pricing() {
+  const {t} = useTranslation();
   return (
     <section
       className={`${styles.pricingSection} bg-neutral-50 px-6 md:px-10 lg:px-30 py-14 lg:py-20  h-full`}
     >
-      <Heading heading="Pricing" />
+      <Heading heading={t("pricing-title")} />
 
       <div className={styles.container}>
         <div className={`${styles.card} rounded-lg pb-24 xl:pb-0 w-full`}>
           <h3
             className={`font-bold text-3xl lg:text-4xl p-10 text-center border-b-4 border-gray-500 text-gray-500`}
           >
-            Lite Package
+            {t("lite-heading")}
           </h3>
 
           <div className="card-body p-0">
             <ul className="w-full  text-gray-500 text-center text-lg">
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                500 tickets
+                {t("lite-ticket")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Fully accessible dashboard.
+                {t("lite-accessible")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Manage tickets on the go.
+                {t("lite-permissions")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base ">
-                Calendar for Reservations.
+                {t("lite-reservations")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Generated QR code for store and branch.
+                {t("lite-QRcode")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Tickets status update notifications.
+                {t("lite-notification")}
               </li>
               <li className="py-6 text-sm lg:texl-base">
-                Tickets validation for 90 days.
+                {t("lite-validation")}
               </li>
             </ul>
           </div>
@@ -46,51 +49,55 @@ export default function Pricing() {
             className={`absolute bottom-0 text-center py-8 w-full border-t border-gray-500`}
           >
             <p className="text-sm lg:texl-base">
-              <del className="text-gray-400 font-bold">249.99</del>{" "}
+              <del className="text-gray-400 font-bold">
+                {t("lite-new-price")}
+              </del>{" "}
               <span
                 className={`${styles.price} text-gray-500 font-bold text-3xl lg:text-4xl`}
               >
-                109.99
+                {t("lite-old-price")}
               </span>{" "}
-              <span className="text-gray-500 font-semibold">SAR</span>
+              <span className="text-gray-500 font-semibold">{t("coin")}</span>
             </p>
           </div>
         </div>
 
         <div className={`${styles.card} rounded-lg pb-24 xl:pb-0`}>
           <div className="flex flex-col  p-10 text-center border-b-4 border-[#554d98] text-[#554d98]">
-            <h3 className={`font-bold text-3xl lg:text-4xl `}>Plus Package</h3>
-            <p className="mt-3 text-lg lg:text-xl">Recommended</p>
+            <h3 className={`font-bold text-3xl lg:text-4xl `}>
+              {t("plus-heading")}
+            </h3>
+            <p className="mt-3 text-lg lg:text-xl">{t("plus-sub-heading")}</p>
           </div>
 
           <div className="card-body p-0">
             <ul className="w-full  text-[#554d98] text-center text-lg">
               <li className="border-b border-[#554d98] py-6 font-semibold text-sm lg:texl-base">
-                100 tickets
+                {t("plus-ticket")}
               </li>
               <li className="border-b border-[#554d98] py-6 font-semibold text-sm lg:texl-base">
-                Fully accessible dashboard.
+                {t("plus-accessible")}
               </li>
               <li className="border-b border-[#554d98] py-6 font-semibold text-sm lg:texl-base">
-                Employee permissions and access rule.
+                {t("plus-permissions")}
               </li>
               <li className="border-b border-[#554d98] py-6 font-semibold text-sm lg:texl-base">
-                Reports and KPIs.
+                {t("plus-reports")}
               </li>
               <li className="border-b border-[#554d98] py-6 font-semibold text-sm lg:texl-base">
-                Manage tickets on the go.
+                {t("plus-manage")}
               </li>
               <li className="border-b border-[#554d98] py-6 font-semibold text-sm lg:texl-base">
-                Calendar for Reservations.
+                {t("plus-reservations")}
               </li>
               <li className="border-b border-[#554d98] py-6 font-semibold text-sm lg:texl-base">
-                Generated QR code for store and branch.
+                {t("plus-QRcode")}
               </li>
               <li className="border-b border-[#554d98] py-6 font-semibold text-sm lg:texl-base">
-                Tickets status update notifications.
+                {t("plus-notification")}
               </li>
               <li className="py-6 font-semibold text-sm lg:texl-base">
-                Tickets validation for 90 days.
+                {t("plus-validation")}
               </li>
             </ul>
           </div>
@@ -98,13 +105,15 @@ export default function Pricing() {
             className={`absolute bottom-0 text-center py-8 w-full border-t border-[#554d98]`}
           >
             <p className="text-sm lg:texl-base">
-              <del className="text-[#554d9880] font-bold">524.99</del>{" "}
+              <del className="text-[#554d9880] font-bold">
+                {t("plus-old-price")}
+              </del>{" "}
               <span
                 className={`${styles.price} text-[#554d98] font-bold text-3xl lg:text-4xl`}
               >
-                199.99
+                {t("plus-new-price")}
               </span>{" "}
-              <span className="text-[#554d98] font-semibold">SAR</span>
+              <span className="text-[#554d98] font-semibold">{t("coin")}</span>
             </p>
           </div>
         </div>
@@ -113,56 +122,58 @@ export default function Pricing() {
           <h3
             className={`font-bold text-3xl lg:text-4xl p-10 text-center border-b-4 border-gray-500 text-gray-500`}
           >
-            Pro Package
+            {t("pro-heading")}
           </h3>
 
           <div className="card-body p-0">
             <ul className="w-full  text-gray-500 text-center text-lg">
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                2000 tickets
+                {t("pro-ticket")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Fully accessible dashboard.
+                {t("pro-accessible")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Employee permissions and access rule.
+                {t("pro-permissions")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Reports and KPIs.
+                {t("pro-reports")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Unlimited branches and services.
+                {t("pro-services")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Fully customizable store.
+                {t("pro-store")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Manage tickets on the go.
+                {t("pro-manage")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Calendar for Reservations.
+                {t("pro-reservations")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Generated QR code for store and branch.
+                {t("pro-QRcode")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Tickets status update notifications.
+                {t("pro-notification")}
               </li>
               <li className="border-b border-gray-500 py-6 text-sm lg:texl-base">
-                Tickets validation for 90 days.
+                {t("pro-validation")}
               </li>
             </ul>
           </div>
 
           <div className={`absolute bottom-0 text-center py-7  w-full`}>
             <p className="text-sm lg:texl-base">
-              <del className="text-gray-400 font-bold">999.99</del>{" "}
+              <del className="text-gray-400 font-bold">
+                {t("pro-old-price")}
+              </del>{" "}
               <span
                 className={`${styles.price} text-gray-500 font-bold text-3xl lg:text-4xl`}
               >
-                369.99{" "}
+                {t("pro-new-price")}{" "}
               </span>{" "}
-              <span className="text-gray-500 font-semibold">SAR</span>
+              <span className="text-gray-500 font-semibold">{t("coin")}</span>
             </p>
           </div>
         </div>

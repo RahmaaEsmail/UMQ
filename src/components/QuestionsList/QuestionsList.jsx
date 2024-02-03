@@ -1,17 +1,19 @@
-import Heading from '../Heading/Heading';
-import QuestionItem from '../QuestionItem/QuestionItem';
-import styles from './QuestionsList.module.css';
+import { useTranslation } from "react-i18next";
+import Heading from "../Heading/Heading";
+import QuestionItem from "../QuestionItem/QuestionItem";
+import styles from "./QuestionsList.module.css";
 
 export default function QuestionsList() {
+  const { t } = useTranslation();
   return (
     <section className={`${styles.section} p-20`}>
-      <Heading  heading={'Frequently Asked Questions'}/>
+      <Heading heading={t("question-heading")} />
       <div className={styles.questionsContainer}>
-        <QuestionItem question="What is UMQ?" />
-        <QuestionItem question="What Can UMQ do for you?" />
-        <QuestionItem question="How Can the user maje a UMQ?" />
-        <QuestionItem question="How many branches, Services ?" />
-        <QuestionItem question="Can I use UMQ offline without an internet connection?" />
+        <QuestionItem question={t("first-question")} answer={t('first-answer')}/>
+        <QuestionItem question={t("second-question")} answer={t('third-answer')}/>
+        <QuestionItem question={t("third-question")} answer={t('second-answer')} />
+        <QuestionItem question={t("fourth-question")} />
+        <QuestionItem question={t("last-question")} />
       </div>
     </section>
   );

@@ -1,9 +1,10 @@
 .section {
   background-color: #dbcbe8;
+  height: auto;
 }
 
 .questionsContainer {
-  margin: 0 auto;
+  margin:  auto;
   display: flex;
   flex-direction: column;
   gap: 13px;

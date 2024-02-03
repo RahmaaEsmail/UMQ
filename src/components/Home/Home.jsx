@@ -1,18 +1,26 @@
 import { useEffect } from "react";
 import Typed from "typed.js";
+import { useTranslation } from "react-i18next";
 
 import styles from "./Home.module.css";
-// import homeImg from '/images/WhatsApp Image 2024-01-29 at 21.46.02_67ed76a2.jpg'
+
+const englishOptions = [
+  "For deep cleaning services",
+  "We promise you a unique experience with our services",
+  "May God Bless You",
+];
+const arabicOptions = [
+  "خدمات التنظيف العميق",
+  "نعدكم بتجربة فريدة مع خدماتنا",
+  "بارك الله فيكم",
+];
 
 export default function Home() {
+  const { t, i18n } = useTranslation();
+  console.log(i18n.language);
   useEffect(() => {
-    // Your text options go here
     const options = {
-      strings: [
-        "For deep cleaning services",
-        "We promise you a unique experience with our services",
-        "May God Bless You",
-      ],
+      strings: i18n.language == "en" ? englishOptions : arabicOptions,
       typeSpeed: 100,
       backSpeed: 50,
       loop: true,
@@ -25,7 +33,7 @@ export default function Home() {
     return () => {
       typed.destroy();
     };
-  }, []);
+  }, [i18n.language]);
 
   return (
     <>
@@ -37,8 +45,7 @@ export default function Home() {
         >
           <div>
             <h1 className="text_color text-4xl mt-5 font-bold	leading-relaxed">
-              Welcome To Your Website <br /> and Your Place{" "}
-              <span className="place">UMQ</span> <br />
+              {t("homeHeading")}.
               <span className="typed-text">
                 <br />
               </span>
@@ -47,11 +54,7 @@ export default function Home() {
 
           <div className="pt-14">
             <p className="text-neutral-800 leading-relaxed">
-              We are a specialized cleaning company dedicated to providing
-              high-quality and reliable cleaning services. Our team consists of
-              skilled professionals who undergo rigorous training and are
-              equipped with the latest technologies and tools to ensure the
-              efficient and effective delivery of our services.
+              {t("home-paragraph")}
             </p>
           </div>
 
@@ -59,13 +62,13 @@ export default function Home() {
             <div className={`${styles.input} pt-10 py-2 `}>
               <input
                 type="tel"
-                placeholder="Type here"
+                placeholder={t("input-placeholder")}
                 className={`text_color placeholder-gray-500 bg-transparent appearance-none p-2 bg-white input-bordered focus:outline-none input-accent  w-full max-w-xs`}
               />
               <button
                 class={`${styles.btn} ms-5 button_form border-none py-3 px-2`}
               >
-                Save changes
+                {t("change-btn")}
               </button>
             </div>
           </div>
